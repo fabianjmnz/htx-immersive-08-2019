@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body{
+        background-color:rgb(15, 148, 33);
+    }
+    .outer-box{
+        width:95vw;
+        height:60vw;
+        border: 3px solid red;
+        border-radius: 20px
+        }
+    .message-box{
+        position:relative;
+        height:10vw;
+        border:3px solid purple;
+    }
+    .dealer-box{
+        position: relative;
+        height:20vw;
+        border: 3px solid blue;
+    }
+    .player-box{
+        position:relative;
+        height:20vw;
+        border: 3px solid orange;
+    }
+    .button-box{
+        position:relative;
+        height:5vw;
+        margin:auto;
+        text-align:center;
+    }
+     
+        
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div id=Table class="outer-box">
+        <div id=Messages class="message-box"></div>
+        <!--Dealer Info-->
+        <div class="dealer-box">
+            <label>Dealer: </label>
+            <label id=dealer-points class=points></label>
+            <div id=dealer-hand class=hand></div>
+        </div>
+        <!--Player Info-->
+        <div class="player-box">
+            <label>Player: </label>
+            <label id=player-points class=points></label>
+            <div id=player-hand class=hand></div> 
+        </div>
+        <!--Button displayed while in game-->
+        <div class="button-box">
+            <button id="btnDeal">Deal</button>
+            <button id="btnHit">Hit</button>
+            <button id="btnStand">Stand</button>
+        </div>
+    </div>
+
+</body>
+</html>
