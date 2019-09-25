@@ -5,66 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    
     <style>
     body{
-        background-color:rgb(15, 148, 33);
+        background-color:white;
+    }
+    img{
+        width:8%;
     }
     .outer-box{
-        width:95vw;
-        height:60vw;
-        border: 3px solid red;
+        width:auto;
+        height:auto;
+        border: 3px solid rgb(15,148,33);
+        background-color:rgb(15,148,33);
         border-radius: 20px
         }
     .message-box{
         position:relative;
-        height:10vw;
-        border:3px solid purple;
+        height:5vw;
+        text-align: center;
+        top: 20px;
     }
     .dealer-box{
         position: relative;
-        height:20vw;
-        border: 3px solid blue;
+        height:30%;
+        
     }
     .player-box{
         position:relative;
-        height:20vw;
-        border: 3px solid orange;
+        height:30%;
+    }
+    .hand{
+        position:relative;
+        background-color:rgb(109, 185, 109);
+        padding-top:4px;
+        padding-left:5px;
+        height:12vw;
+        
     }
     .button-box{
         position:relative;
         height:5vw;
         margin:auto;
         text-align:center;
-    }
-     
-        
-    
-    
-    
+        top:10px;
+    } 
     </style>
 </head>
 <body>
     <div id=Table class="outer-box">
-        <div id=Messages class="message-box"></div>
+        <div id="Messages" class="message-box">HELLO</div>
         <!--Dealer Info-->
         <div class="dealer-box">
             <label>Dealer: </label>
-            <label id=dealer-points class=points></label>
-            <div id=dealer-hand class=hand></div>
+            <label id="dealer-points" class="points"></label>
+            <br>
+            <div id="dealer-hand" class="hand"></div>
         </div>
         <!--Player Info-->
         <div class="player-box">
             <label>Player: </label>
-            <label id=player-points class=points></label>
-            <div id=player-hand class=hand></div> 
+            <label id="player-points" class="points"></label>
+            <br>
+            <div id="player-hand" class="hand"></div>
         </div>
         <!--Button displayed while in game-->
         <div class="button-box">
             <button id="btnDeal">Deal</button>
             <button id="btnHit">Hit</button>
             <button id="btnStand">Stand</button>
+            <button id="btnPlayAgain">Play Again?</button>
         </div>
+        
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="Blackjack.js"></script>
 </body>
+
 </html>
