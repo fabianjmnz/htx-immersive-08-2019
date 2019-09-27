@@ -4,19 +4,21 @@ var dealer = [];
 document.getElementById("btnHit").disabled = true;
 document.getElementById("btnStand").disabled = true;
 btnPlayAgain.style.display = 'none'
+$('#Messages').text('Lets Play Blackjack!!')
 //////////////////////////////////DEAL BUTTON////////////////////////////////////////////
 document.getElementById("btnDeal").addEventListener("click",function(){
+  wait();
   var card, cardUrl;
 btnDeal.style.display = 'none'
 document.getElementById("btnHit").disabled = false;
 document.getElementById("btnStand").disabled = false;
+$('#Messages').text(' ')
 deck = newDeck();
 shuffleDeck(deck);
+//$("#dealer-hand").append('<img src=images/back_of_card.png>');
 dealACard(player,"#player-hand");     // putting a # makes a difference why?
 dealACard(dealer,"#dealer-hand");
-dealACard(player,"#player-hand"); 
-//$('#dealer-hand').src = "back_of_card.png";
-dealACard(dealer,"#dealer-hand"); 
+dealACard(player,"#player-hand");  
 updateScoreDisplay();
 if ((getScore(player)==21)&&(getScore(dealer)==21)){
   $('#Messages').text('NICE BUUUUSTTTT!')
@@ -49,6 +51,12 @@ if (getScore(player) > 21)
   btnStand.style.display = 'none'
   btnPlayAgain.style.display = 'inline'
 }
+if (getScore(player)==21){
+  $('#Messages').text('YoU wIn!!!!')
+  btnHit.style.display = 'none'
+  btnStand.style.display = 'none'
+  btnPlayAgain.style.display = 'inline'
+}
 });
 /////////////////////////////////STAND BUTTON///////////////////////////////////////////////
 document.getElementById("btnStand").addEventListener("click",function(){
@@ -56,7 +64,6 @@ while (getScore(dealer)<17)
 { 
   dealACard(dealer,"#dealer-hand");
   updateScoreDisplay(); 
- 
 } 
 if (getScore(dealer)>getScore(player)){
   $("#Messages").text('YOUUUU LOSSSEEE!!')
@@ -80,9 +87,7 @@ btnPlayAgain.style.display = 'inline'
 });
 /////////////////////////////PLAY AGAIN BUTTON///////////////////////////////////////////
 document.getElementById('btnPlayAgain').addEventListener("click",function(){
-player = []
-dealer = []
-deck = []
+  document.location.reload()
 
 
 });
@@ -101,6 +106,12 @@ function newDeck() {
  
   return deck;
 }
+function wait(){
+  setTimeout(function(){
+
+  },3000);}
+  
+
 
 function CardImage(card) {
   var cardName;
@@ -123,7 +134,7 @@ function dealACard(handArray, elementSelector) {
     handArray.push(card);
     cardUrl = CardImage(card);
     $(elementSelector).append(
-      '<img src="' + cardUrl + '"> '     // space after closed bracket creates space in between cards
+      '<img src=' + cardUrl + '> '     // space after closed bracket creates space in between cards
     );
 }
 function shuffleDeck(deck){
@@ -153,6 +164,7 @@ function getScore(cards) {
 }
 function updateScoreDisplay() {
   var dealerPoints = getScore(dealer);
+  wait();
   $("#dealer-points").text(dealerPoints);  // $ turns #dealer-points.text into a function why?
   var playerPoints = getScore(player);
   $('#player-points').text(playerPoints);
