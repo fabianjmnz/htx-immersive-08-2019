@@ -1,41 +1,55 @@
 body{
-  
     background-image: url("underwaterMarch.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
     width:100vw;
-    margin:0px;
-    
-    
+    margin:0px;  
 }
-
 h1{
-    position: absolute ;
-    color:rgba(83, 78, 78, 0.35);
+    position: absolute;
+    color:rgba(109, 59, 59,0.4);
     font-family:  'Merienda', cursive;
     font-size: 40px;
     bottom: 10px;
     left: 40px;   
-}
-
-h3{ 
+    font-style: italic;
+    animation-name:fade;
+    animation-duration: 8s;
     
+}
+h3{ 
     display: inline-flex;
-    color:rgba(255,255,255,0.4);
+    color:rgba(175, 158, 158, 0.363);
     font-family: 'Merienda', cursive;
     font-size: 30px;
     padding-left:60px;
-    transform: rotateX(40deg);
-    transform: rotateY(60deg)
-
+    transform: skewX(40deg);
+    transform: rotateY(40deg);
+    margin: 10px 0px;
+    animation-name:fade;
+    animation-duration: 2s;
     
-    
-    
-   
-    
-    
-
-   
-
 }
+h2{
+    color:rgba(10, 73, 109,0.9);
+    text-align: center;
+    font-family: 'Merienda', cursive;
+    font-size:30px;
+    margin:10px 0px;
+    font-style: italic;
+    animation: fade 15s;
+}  
+@keyframes fade {
+    0% {opacity:0;}
+    100%{opacity:1;}  
+}
+
+    
+   
+    
+    
+
+   
+
+
